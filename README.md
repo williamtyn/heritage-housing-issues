@@ -19,8 +19,11 @@ In this application you can calculate and predict the estimated sales price for 
 <ul>
 <li><a href="#storytelling">Storytelling</a></li>
 <li><a href="#dataset">Dataset</a></li>
+<li><a href="#hypothesis">Hypothesis and validation</a></li>
+
 <li><a href="#business-requirements">Business Requirements</a></li>
 <li><a href="#business-case">Business Case Assessment</a></li>
+<li><a href="#map-business-requirements">Mapping Business Requirements</a></li>
 
 </ul>
 <li><a href="#data-understanding">Data Understanding</a></li>
@@ -73,6 +76,46 @@ From searching the Internet, Lydia found a public dataset with house prices for 
 
 [House Prices Data from Kaggle](https://www.kaggle.com/datasets/codeinstitute/housing-prices-data)
 
+
+| Variable         | Meaning                                                     | Units                                                                                |
+|------------------|-------------------------------------------------------------|--------------------------------------------------------------------------------------|
+|1stFlrSF|First Floor square feet|334 - 4692|
+|2ndFlrSF|Second-floor square feet|0 - 2065|
+|BedroomAbvGr|Bedrooms above ground (i.e. does NOT include basement bedrooms)|0 - 8|
+|BsmtExposure|Refers to walkout or garden level walls|Gd: Good Exposure; Av: Average Exposure; Mn: Minimum Exposure; No: No Exposure; None: No Basement|
+|BsmtFinType1|Rating of basement finished area|GLQ: Good Living Quarters; ALQ: Average Living Quarters; BLQ: Below Average Living Quarters; Rec: Average Rec Room; LwQ: Low Quality; Unf: Unfinshed; None: No Basement|
+|BsmtFinSF1|Type 1 finished square feet|0 - 5644|
+|BsmtUnfSF|Unfinished square feet of basement area|0 - 2336|
+|TotalBsmtSF|Total square feet of basement area|0 - 6110|
+|GarageArea|Size of garage in square feet|0 - 1418|
+|GarageFinish|Interior finish of the garage|Fin: Finished; RFn: Rough Finished; Unf: Unfinished; None: No Garage|
+|GarageYrBlt|Year garage was built|1900 - 2010|
+|GrLivArea|Above grade (ground) living area square feet|334 - 5642|
+|KitchenQual|Kitchen quality|Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair; Po: Poor|
+|LotArea| Lot size in square feet|1300 - 215245|
+|LotFrontage| Linear feet of street connected to property|21 - 313|
+|MasVnrArea|Masonry veneer area in square feet|0 - 1600|
+|EnclosedPorch|Enclosed porch area in square feet|0 - 286|
+|OpenPorchSF|Open porch area in square feet|0 - 547|
+|OverallCond|Rates the overall condition of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
+|OverallQual|Rates the overall material and finish of the house|10: Very Excellent; 9: Excellent; 8: Very Good; 7: Good; 6: Above Average; 5: Average; 4: Below Average; 3: Fair; 2: Poor; 1: Very Poor|
+|WoodDeckSF|Wood deck area in square feet|0 - 736|
+|YearBuilt|Original construction date|1872 - 2010|
+|YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
+|SalePrice|Sale Price|34900 - 755000|
+
+**Project Terms & Jargon**
+Fill this with information about ordinary terms in this project
+
+
+<h3 id="hypothesis">Hypothesis and how to validate?</h3>
+
+1. The first hypothesis is that houses with more **GrLivArea** has higher **SalesPrice**.
+* A Correlation study can help in this investigation.
+
+2. Another hypothesis is that the younger the house is **YearBuilt** the better the **OverallCond** is of the house.
+* A Correlation study can help in this investigation.
+
 <h3 id="business-requirements">Business Requirements</h3>
 
 1. The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualizations of the correlated variables against the sale price to show that.
@@ -120,6 +163,18 @@ Project Epics can be found [here](https://github.com/users/williamtyn/projects/4
 
 10. How will the client benefit?
 * The client will maximize the sales price for the inherited properties.
+
+<h3 id="map-business-requirements">Map Business Requirements to Data Visualizations and ML tasks</h3>
+
+**Business Requirement 1:** Data Visualization and Correlation
+* We will inspect the data related to house prices.
+* We will perform a correlation study to investigate the most relevant variables correlated to the sale price.
+* We will visualize these variables against the sale price, display and summarize the insights.
+
+**Business Requirement 2:** Regression and Data Analysis
+* We will deliver an ML system that is capable of reliably predicting the summed sales price of the 4 inherited houses.
+* We will use conventional ML to map the relationships between the features and the target.
+* We will use Regression as method to estimate relationship between variables and target.
 
 <h2 id="sources">Sources</h2>
 
