@@ -24,7 +24,7 @@ In this application you can calculate and predict the estimated sales price for 
 <li><a href="#business-requirements">Business Requirements</a></li>
 <li><a href="#business-case">Business Case Assessment</a></li>
 <li><a href="#map-business-requirements">Mapping Business Requirements</a></li>
-
+<h3 id="ml-business-case">ML Business Case</h3>
 </ul>
 <li><a href="#data-understanding">Data Understanding</a></li>
 <li><a href="#data-preparation">Data Preparation</a></li>
@@ -32,7 +32,16 @@ In this application you can calculate and predict the estimated sales price for 
 <li><a href="#evaluation">Evaluation</a></li>
 <li><a href="#deployment">Deployment</a></li>
 </ul>
+<li><a href="#dashboard-design">Dashboard Design</a></li>
+<ul>
+<li><a href="#dashboard-1">Page 1: Quick Project Summary</a></li>
+<li><a href="#dashboard-2">Page 2: House Sale Price Study</a></li>
+<li><a href="#dashboard-3">Page 3: House Sale Price Predictor</a></li>
+<li><a href="#dashboard-4">Page 4: Project Hypothesis and Validation</a></li>
+<li><a href="#dashboard-5">Page 5: ML Model Performance</a></li>
+</ul>
 <li><a href="#sources">Sources</a></li>
+
 
 ---
 
@@ -176,7 +185,7 @@ Project Epics can be found [here](https://github.com/users/williamtyn/projects/4
 * We will use conventional ML to map the relationships between the features and the target.
 * We will use Regression as method to estimate relationship between variables and target.
 
-<h3 id="map-business-requirements">ML Business Case</h3>
+<h3 id="ml-business-case">ML Business Case</h3>
 
 #### Predict House Prices in Ames, Iowa
 **Regression model**
@@ -188,6 +197,19 @@ Project Epics can be found [here](https://github.com/users/williamtyn/projects/4
 ** the price of sales is more than 10% different from what the model has predicted. Say, the model predict Price at 100 000$, and after bidding the proposed price from buyer is 85 000$.
 * The output is defined as a numerical value for price in dollars. The prediction is made on the fly (not in batches).
 
+
+<h2 id="dashboard-design">Dashboard Design</h2>
+<h3 id="dashboard-1">Page 1: Quick Project Summary</h3>
+A high-level summary of the project, including:
+
+* Terms and jargon
+* Information on the dataset
+* The business/client requirements
+
+<h3 id="dashboard-2">Page 2: House Sale Price Study</h3>
+<h3 id="dashboard-3">Page 3: House Sale Price Predictor</h3>
+<h3 id="dashboard-4">Page 4: Project Hypothesis and Validation</h3>
+<h3 id="dashboard-5">Page 5: ML Model Performance</h3>
 
 <h2 id="sources">Sources</h2>
 
