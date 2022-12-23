@@ -176,6 +176,19 @@ Project Epics can be found [here](https://github.com/users/williamtyn/projects/4
 * We will use conventional ML to map the relationships between the features and the target.
 * We will use Regression as method to estimate relationship between variables and target.
 
+<h3 id="map-business-requirements">ML Business Case</h3>
+
+#### Predict House Prices in Ames, Iowa
+**Regression model**
+* We want an ML model to predict House Prices in Ames, Iowa. With the model Lydia can make the right descision with the 4 houses she have inherited. The target variable is numerical and contains the estimated house price based on choosen features. We consider a regression model, which is supervised and uni-dimensional.
+* Our ideal outcome is to provide Lydia with reliable insights so she feel comfortable making good descisions for her houses and possibly future houses.
+* The model success metrics are:
+** At least 0.7 for R2 score, on train and test set.
+* The ML model is considered a failure if:
+** the price of sales is more than 10% different from what the model has predicted. Say, the model predict Price at 100 000$, and after bidding the proposed price from buyer is 85 000$.
+* The output is defined as a numerical value for price in dollars. The prediction is made on the fly (not in batches).
+
+
 <h2 id="sources">Sources</h2>
 
 [Text about CRISP-DM](https://www.datascience-pm.com/crisp-dm-2/)
