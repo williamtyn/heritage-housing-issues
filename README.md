@@ -24,7 +24,7 @@ In this application you can calculate and predict the estimated sales price for 
 <li><a href="#business-requirements">Business Requirements</a></li>
 <li><a href="#business-case">Business Case Assessment</a></li>
 <li><a href="#map-business-requirements">Mapping Business Requirements</a></li>
-<h3 id="ml-business-case">ML Business Case</h3>
+<li><a href="#ml-business-case">ML Business Case</a></li>
 </ul>
 <li><a href="#data-understanding">Data Understanding</a></li>
 <li><a href="#data-preparation">Data Preparation</a></li>
