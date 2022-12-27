@@ -28,6 +28,7 @@ In this application you can calculate and predict the estimated sales price for 
 </ul>
 <li><a href="#data-understanding">Data Understanding</a></li>
 <li><a href="#data-preparation">Data Preparation</a></li>
+<li><a href="#data-cleaning">Data Cleaning</a></li>
 <li><a href="#modelling">Modelling</a></li>
 <li><a href="#evaluation">Evaluation</a></li>
 <li><a href="#deployment">Deployment</a></li>
@@ -197,6 +198,40 @@ Project Epics can be found [here](https://github.com/users/williamtyn/projects/4
 ** the price of sales is more than 10% different from what the model has predicted. Say, the model predict Price at 100 000$, and after bidding the proposed price from buyer is 85 000$.
 * The output is defined as a numerical value for price in dollars. The prediction is made on the fly (not in batches).
 
+
+<h2 id="data-preparation">Data Preparation</h2>
+<h3 id="data-cleaning">Data Cleaning</h3>
+
+**Drop features**
+* EnclosedPorch
+Had **90,7%** of missing data. Due to that high amount of missing data, we descided to drop the feature.
+
+**Mean value**
+* BedroomAbvGr
+We must asume that all houses have bedrooms above ground so the best descision is to fill the missing rows with the mean.
+
+* GarageYrBlt 
+We first asumed that if there was NaN in this data, the House didn´t have a garage. But after inspecting the data we found that some rows had information in GarageArea but not in YearBuilt, therefore we descided to use the mean method for this feature.
+
+* LotFrontage
+It is reasonable to assume that NaN means 0 (no street is connected). But the smallest value for this feature is 21 which is far from 0. Therefore we use the mean method for this feature.
+
+**NaN to 0**
+* 2ndFlrSF
+We assume that NaN is not filled in because the house does not have a second floor, therefore we change the value from NaN to 0.
+
+* MasVnrArea
+We assume that NaN is not filled in because the house does not have masonry veneer walls, therefore we change the value from NaN to 0.
+
+* WoodDeckSF
+We assume that NaN is not filled in because the house does not have wooddeck, therefore we change the value from NaN to 0.
+
+**NaN to None**
+* BsmtFinType1
+We assume this feature have missing values when the house don´t have a basement.
+
+* GarageFinish
+We assume this feature have missing values when the house don´t have a garage.
 
 <h2 id="dashboard-design">Dashboard Design</h2>
 <h3 id="dashboard-1">Page 1: Quick Project Summary</h3>
