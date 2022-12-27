@@ -27,6 +27,9 @@ In this application you can calculate and predict the estimated sales price for 
 <li><a href="#ml-business-case">ML Business Case</a></li>
 </ul>
 <li><a href="#data-understanding">Data Understanding</a></li>
+<ul>
+<li><a href="#data-reviewing">Data reviewing</a></li>
+</ul>
 <li><a href="#data-preparation">Data Preparation</a></li>
 <li><a href="#data-cleaning">Data Cleaning</a></li>
 <li><a href="#modelling">Modelling</a></li>
@@ -198,6 +201,45 @@ Project Epics can be found [here](https://github.com/users/williamtyn/projects/4
 ** the price of sales is more than 10% different from what the model has predicted. Say, the model predict Price at 100 000$, and after bidding the proposed price from buyer is 85 000$.
 * The output is defined as a numerical value for price in dollars. The prediction is made on the fly (not in batches).
 
+<h2 id="data-understanding">Data Understanding</h2>
+<h3 id="data-reviewing">Data reviewing</h3>
+
+**Missing data**
+
+| Variable         | Meaning                                                     | Comment                                                                                |
+|------------------|-------------------------------------------------------------|--------------------------------------------------------------------------------------|
+|1stFlrSF|First Floor square feet||
+|2ndFlrSF|Second-floor square feet|5,9% missing data|
+|BedroomAbvGr|Bedrooms above ground (i.e. does NOT include basement bedrooms)|6,8% missing data|
+|BsmtExposure|Refers to walkout or garden level walls||
+|BsmtFinType1|Rating of basement finished area|7,8% missing data|
+|BsmtFinSF1|Type 1 finished square feet||
+|BsmtUnfSF|Unfinished square feet of basement area||
+|TotalBsmtSF|Total square feet of basement area||
+|GarageArea|Size of garage in square feet||
+|GarageFinish|Interior finish of the garage|11,1% missing data|
+|GarageYrBlt|Year garage was built|5,5% missing data|
+|GrLivArea|Above grade (ground) living area square feet||
+|KitchenQual|Kitchen quality||
+|LotArea| Lot size in square feet||
+|LotFrontage| Linear feet of street connected to property|17,7% missing data|
+|MasVnrArea|Masonry veneer area in square feet|59% missing data|
+|EnclosedPorch|Enclosed porch area in square feet|90,7% missing data|
+|OpenPorchSF|Open porch area in square feet||
+|OverallCond|Rates the overall condition of the house||
+|OverallQual|Rates the overall material and finish of the house||
+|WoodDeckSF|Wood deck area in square feet|5,3% missing data|
+|YearBuilt|Original construction date||
+|YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)||
+|SalePrice|Sale Price||
+
+**Target**
+Target is good with 100% of its data filled.
+
+**Type of features**
+Totally there is 24 features:
+* 4 categorical
+* 20 numerical 
 
 <h2 id="data-preparation">Data Preparation</h2>
 <h3 id="data-cleaning">Data Cleaning</h3>
