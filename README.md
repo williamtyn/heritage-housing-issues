@@ -31,7 +31,10 @@ In this application you can calculate and predict the estimated sales price for 
 <li><a href="#data-reviewing">Data reviewing</a></li>
 </ul>
 <li><a href="#data-preparation">Data Preparation</a></li>
+<ul>
 <li><a href="#data-cleaning">Data Cleaning</a></li>
+<li><a href="#feature-engineering">Feature Engineering</a></li>
+</ul>
 <li><a href="#modelling">Modelling</a></li>
 <li><a href="#evaluation">Evaluation</a></li>
 <li><a href="#deployment">Deployment</a></li>
@@ -274,6 +277,52 @@ We assume this feature have missing values when the house don´t have a basement
 
 * GarageFinish
 We assume this feature have missing values when the house don´t have a garage.
+
+<h3 id="feature-engineering">Feature Engineering</h3>
+
+#### Transformation
+
+**Numerical**
+
+Transformation methods that was checked:
+Logarithmic in base e, Logarithmic in base 10, Reciprocal, Power, BoxCox, Yeo Johnson
+
+* 1stFlrSF: None of the tranformation method made the distribution better.
+* 2ndFlrSF: None of the tranformation method made the distribution better.
+* BedroomAbvGr: None of the tranformation method made the distribution better.
+* BsmtFinSF1: None of the tranformation method made the distribution better.
+* BsmtUnfSF: Better distribution and handled outliers with yeo_johnson.
+* TotalBsmtSF: None of the tranformation method made the distribution better.
+* GarageArea: None of the tranformation method made the distribution better.
+* GarageYrBlt: None of the tranformation method made the distribution better.
+* GrLivArea: Better distribution with yeo_johnson.
+* LotArea: None of the tranformation method made the distribution better.
+* LotFrontage: None of the tranformation method made the distribution better.
+* MasVnrArea: None of the tranformation method made the distribution better.
+* OpenPorchSF: None of the tranformation method made the distribution better.
+* OverallCond: None of the tranformation method made the distribution better.
+* OverallQual: None of the tranformation method made the distribution better.
+* WoodDeckSF: None of the tranformation method made the distribution better.
+* YearBuilt: None of the tranformation method made the distribution better.
+* YearRemodAdd: None of the tranformation method made the distribution better.
+
+**Categorical**
+
+* BsmtExposure: Tranformation with Ordinal Encoder from categorical to numerical
+* BsmtFinType1: Tranformation with Ordinal Encoder from categorical to numerical
+* GarageFinish: Tranformation with Ordinal Encoder from categorical to numerical
+* KitchenQual: Tranformation with Ordinal Encoder from categorical to numerical
+
+**SmartCorrelatedSelection**
+
+All features was selected and after transformation done with spearman and threshold 0.6 this is the features to drop:
+* 1stFlrSF
+* 2ndFlrSF
+* GarageArea
+* GarageYrBlt
+* OverallQual
+* YearRemodAdd
+
 
 <h2 id="dashboard-design">Dashboard Design</h2>
 <h3 id="dashboard-1">Page 1: Quick Project Summary</h3>
