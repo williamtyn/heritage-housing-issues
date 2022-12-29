@@ -47,6 +47,7 @@ In this application you can calculate and predict the estimated sales price for 
 <li><a href="#dashboard-4">Page 4: Project Hypothesis and Validation</a></li>
 <li><a href="#dashboard-5">Page 5: ML Model Performance</a></li>
 </ul>
+<li><a href="#libraries">Libraries</a></li>
 <li><a href="#sources">Sources</a></li>
 
 
@@ -323,6 +324,31 @@ All features was selected and after transformation done with spearman and thresh
 * OverallQual
 * YearRemodAdd
 
+<h2 id="modelling">Modelling</h2>
+
+<h3 id="create-pipeline">Create ML Pipeline</h3>
+
+We dropped the feature "EnclosedPorch" when loading the data because it had over 90% missing values.
+
+We used the transformation methods from feature engineering section to clean and engineer the data from missing values.
+* MeanMedianImputer: To replace missing values for 'BedroomAbvGr', 'GarageYrBlt', 'LotFrontage' with **mean**.
+* CategoricalImputer: To replace missing values for 'GarageFinish', 'BsmtFinType1' with **None**.
+* ArbitraryNumberImputer: To replace missing values for '2ndFlrSF', 'MasVnrArea', 'WoodDeckSF' with **0**.
+* OrdinalCategoricalEncoder: To convert the categorical features 'BsmtExposure', 'BsmtFinType1', 'GarageFinish', 'KitchenQual' to **Numerical** to fit the model.
+* SmartCorrelatedSelection: To check for strongly correlated features and drop the other features that show the same data.
+* StandardScaler: To performs the task of Standardization for numerical features to have common scale when building the model.
+
+<h3 id="split-data">Split data to Train/Test set</h3>
+After creating the pipline we splitted the data to Train and Test set with 80%, 20% ratio.
+
+<h3 id="gridsearchcv">Grid Search CV</h3>
+We used hyperparameters to find the best suitable algorithm. Before this step we assumed Linear Regression would be the best possible fit to this data due to information we found on the internet. Surprising after cross validation we found out that ExtraTreesRegressor had the best mean score of 0.80.
+
+After that we checked different parameters and got a result for both the best model and parameters which we could add to the pipeline.
+
+
+
+
 
 <h2 id="dashboard-design">Dashboard Design</h2>
 <h3 id="dashboard-1">Page 1: Quick Project Summary</h3>
@@ -336,6 +362,9 @@ A high-level summary of the project, including:
 <h3 id="dashboard-3">Page 3: House Sale Price Predictor</h3>
 <h3 id="dashboard-4">Page 4: Project Hypothesis and Validation</h3>
 <h3 id="dashboard-5">Page 5: ML Model Performance</h3>
+
+<h2 id="libraries">Libraries</h2>
+
 
 <h2 id="sources">Sources</h2>
 
