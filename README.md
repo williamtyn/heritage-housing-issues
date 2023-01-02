@@ -359,12 +359,23 @@ A high-level summary of the project, including:
 * The business/client requirements
 
 <h3 id="dashboard-2">Page 2: House Sale Price Study</h3>
+A page to show correlations between features and price.
+
+* Answers Business recuirement 1
+* We will inspect the data related to house prices.
+* We will perform a correlation study to investigate the most relevant variables correlated to the sale price.
+* We will visualize these variables against the sale price, display and summarize the insights.
+
 <h3 id="dashboard-3">Page 3: House Sale Price Predictor</h3>
+Page with widgets to predict a house price based on the selected information.
 <h3 id="dashboard-4">Page 4: Project Hypothesis and Validation</h3>
 <h3 id="dashboard-5">Page 5: ML Model Performance</h3>
 
 <h2 id="libraries">Libraries</h2>
 
+<h2 id="bugs">Bugs</h2>
+
+**When assessing feature importances** 'ExtraTreesRegressor' object has no attribute 'transform'. None could not be passed
 
 <h2 id="sources">Sources</h2>
 
