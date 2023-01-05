@@ -7,10 +7,10 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 # code foundation copied from "Modeling and Evaluation" notebooks
 def pipeline_performance(X_train, y_train, X_test, y_test, pipeline):
     st.info("Train Set")
-    confusion_matrix_and_report(X_train, y_train, pipeline)
+    pipeline_evaluation(X_train, y_train, pipeline)
 
     st.info("Test Set")
-    confusion_matrix_and_report(X_test, y_test, pipeline)
+    pipeline_evaluation(X_test, y_test, pipeline)
 
 
 def pipeline_evaluation(X,y,pipeline):
