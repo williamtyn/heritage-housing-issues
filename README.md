@@ -361,15 +361,32 @@ A high-level summary of the project, including:
 <h3 id="dashboard-2">Page 2: House Sale Price Study</h3>
 A page to show correlations between features and price.
 
-* Answers Business recuirement 1
+* Answers Business Requirement 1
 * We will inspect the data related to house prices.
 * We will perform a correlation study to investigate the most relevant variables correlated to the sale price.
 * We will visualize these variables against the sale price, display and summarize the insights.
 
-<h3 id="dashboard-3">Page 3: House Sale Price Predictor</h3>
-Page with widgets to predict a house price based on the selected information.
+<h3 id="dashboard-3">Page 3: Predict House Sale Price</h3>
+On this page the client can both predict the price of her inherited houses, but also predict house sale price on any house in Ames, Iowa.
+
+* Answers Business Requirement 2
+* Widgets to predict a house sale price based on the selected features.
+* Display estimated sale price on the inherite houses of the client.
 <h3 id="dashboard-4">Page 4: Project Hypothesis and Validation</h3>
+This page answers the hypothesis we had before we started the project.
+
+1. The first hypothesis is that houses with more GrLivArea has higher SalesPrice.
+In our House Prices Study we found out that the correlation was strong with both pearson and spearman methods, which support the hypothesis.
+
+2. The second hypothesis is that the younger the house is YearBuilt the better the OverallCond is of the house.
+After our Study we saw poor correlation between theese features, there is no evidence supporting this hypothesis.
+
 <h3 id="dashboard-5">Page 5: ML Model Performance</h3>
+This page contains information about the ml pipeline.
+
+* Shows the ML Pipeline.
+* Displays the best features the model was trained on.
+* Shows Performance and evaluation.
 
 <h2 id="libraries">Libraries</h2>
 
