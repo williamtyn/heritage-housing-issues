@@ -25,7 +25,7 @@ def project_summary_body():
         f"* 2 - The client is interested in predicting the house sales price from her four inherited houses, and any other house in Ames, Iowa. "
         )
 
-    st.info(
+    st.write(
         f"**Used Data**\n"
         f"* We have used a publicly available data from. \n"
         f"[Kaggle.com](https://www.kaggle.com/datasets/codeinstitute/" +
