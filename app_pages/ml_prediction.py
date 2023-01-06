@@ -23,6 +23,11 @@ def ml_prediction_body():
                       .to_list()
                       )
     
+    st.subheader('Predict House Sale Price')
+    st.write(
+        f"Area is given in square feet (sq ft) "
+        )
+    
     # Generate live data
     X_live = DrawInputsWidgets()
 
@@ -52,14 +57,14 @@ def DrawInputsWidgets():
     # empty dataframe
     X_live = pd.DataFrame([], index=[0])
 
-    # GarageArea,GrLivArea,KitchenQual,TotalBsmtSF,YearBuilt
+    # Widget features: GarageArea,GrLivArea,KitchenQual,TotalBsmtSF,YearBuilt
     with col1:
         feature = 'YearBuilt'
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(df[feature].max()*percentageMax),
+            value=int(df[feature].median())
         )
     X_live[feature] = st_widget
 
@@ -67,19 +72,19 @@ def DrawInputsWidgets():
         feature = 'GrLivArea'
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
-        )
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(df[feature].max()*percentageMax),
+            value=int(df[feature].median())
+    )
     X_live[feature] = st_widget
 
     with col3:
         feature = 'TotalBsmtSF'
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(df[feature].max()*percentageMax),
+            value=int(df[feature].median())
         )
     X_live[feature] = st_widget
 
@@ -87,9 +92,9 @@ def DrawInputsWidgets():
         feature = 'GarageArea'
         st_widget = st.number_input(
             label=feature,
-            min_value=df[feature].min()*percentageMin,
-            max_value=df[feature].max()*percentageMax,
-            value=df[feature].median()
+            min_value=int(df[feature].min()*percentageMin),
+            max_value=int(df[feature].max()*percentageMax),
+            value=int(df[feature].median())
         )
     X_live[feature] = st_widget
     
