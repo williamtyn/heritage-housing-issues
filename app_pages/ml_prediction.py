@@ -37,9 +37,10 @@ def ml_prediction_body():
 
     columns = feat_meaning[0]
     data = feat_meaning[1:]
-
     df_meaning = pd.DataFrame(data, columns=columns).reset_index(drop=True)
-    st.dataframe(df_meaning)
+    
+    if st.button('See feature meaning'):
+        st.dataframe(df_meaning)
     
     # Generate live data
     X_live = DrawInputsWidgets()
@@ -56,6 +57,8 @@ def ml_prediction_body():
         st.write(
             f"Predicted Sale Price for this house: **$ {sale_price_prediction_live}** "
             )
+
+    st.write("---")
 
 def DrawInputsWidgets():
 
@@ -111,6 +114,8 @@ def DrawInputsWidgets():
         )
     X_live[feature] = st_widget
     
+    #Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair; Po: Poor
+
     with col5:
         feature = "KitchenQual"
         st_widget = st.selectbox(
