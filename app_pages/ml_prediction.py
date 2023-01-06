@@ -23,7 +23,7 @@ def ml_prediction_body():
                       .to_list()
                       )
     
-    st.subheader('Predict House Sale Price')
+    st.subheader('Want to predict a house sale price?')
     st.write(
         f"Predict House Sale Price based on theese features. "
         )
@@ -59,6 +59,43 @@ def ml_prediction_body():
             )
 
     st.write("---")
+
+    # prediction for inherited houses
+    st.subheader('Predicted Sale Price Inherited Houses')
+    st.info(
+        f"We have done a prediction for the four inherited houses. "
+        )
+    
+    # load inherited houses data
+    inherited_data = load_inherited_houses_data()
+
+    house_1 = predict_sale_price(
+            inherited_data.iloc[[0]], house_features, pipeline_model
+        )
+    house_2 = predict_sale_price(
+            inherited_data.iloc[[1]], house_features, pipeline_model
+        )
+    house_3 = predict_sale_price(
+            inherited_data.iloc[[2]], house_features, pipeline_model
+        )
+    house_4 = predict_sale_price(
+            inherited_data.iloc[[3]], house_features, pipeline_model
+        )
+    
+    
+    st.write(
+        f"Predicted House 1 Sale Price: **$ {house_1}** "
+        )
+    st.write(
+        f"Predicted House 2 Sale Price: **$ {house_2}** "
+        )
+    st.write(
+        f"Predicted House 3 Sale Price: **$ {house_3}** "
+        )
+    st.write(
+        f"Predicted House 4 Sale Price: **$ {house_4}** "
+        )
+    
 
 def DrawInputsWidgets():
 
