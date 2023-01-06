@@ -25,8 +25,21 @@ def ml_prediction_body():
     
     st.subheader('Predict House Sale Price')
     st.write(
-        f"Area is given in square feet (sq ft) "
+        f"Predict House Sale Price based on theese features. "
         )
+
+    feat_meaning = [("Variable", "Meaning", "Comment"),
+                    ("YearBuilt", "Original construction date	", ""),
+                    ("GrLivArea", "Above ground living area square feet", ""),
+                    ("TotalBsmtSF", "Total square feet of basement area", ""),
+                    ("GarageArea", "Size of garage in square feet", ""),
+                    ("KitchenQual", "Kitchen quality", "Ex: Excellent; Gd: Good; TA: Typical/Average; Fa: Fair; Po: Poor")]
+
+    columns = feat_meaning[0]
+    data = feat_meaning[1:]
+
+    df_meaning = pd.DataFrame(data, columns=columns).reset_index(drop=True)
+    st.dataframe(df_meaning)
     
     # Generate live data
     X_live = DrawInputsWidgets()
@@ -40,9 +53,9 @@ def ml_prediction_body():
             X_live, house_features, pipeline_model
         )
 
-    st.write(
-        f"Predicted Sale Price for this house: **${sale_price_prediction_live}** "
-        )
+        st.write(
+            f"Predicted Sale Price for this house: **$ {sale_price_prediction_live}** "
+            )
 
 def DrawInputsWidgets():
 
@@ -106,6 +119,6 @@ def DrawInputsWidgets():
         )
     X_live[feature] = st_widget
 
-    st.write(X_live)
+    # st.write(X_live)
 
     return X_live
