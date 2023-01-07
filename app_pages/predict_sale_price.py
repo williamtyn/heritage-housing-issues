@@ -7,8 +7,9 @@ from src.machine_learning.model_evaluation import pipeline_performance, pipeline
 
 def predict_sale_price_body():
     st.write("### House Sale Price Predictor")
-    st.info(
-            f"* Predicting the house sales price for our client for the inherited houses, and also any other house in Ames, Iowa. \n"
+    st.success(
+            f"**Business Requirement 2**\n"
+            f"* The client is interested in predicting the sale price of her four inherited houses and any other house in Ames, Iowa. \n"
             )
 
     # load pipeline files
@@ -27,10 +28,10 @@ def predict_sale_price_body():
         f"outputs/ml_pipeline/predict_sale_price/{version}/y_test.csv")
 
     st.info(
-        f"* As our Business Case tells us the model success metrics are at least 0.7 on train and test set.\n"
+        f"* As our Business Case tells us, the model success metrics are at least **0.7** on the train and test set.\n"
         f"* We started to use classification regressors but found out pretty soon that the performance was very low.\n"
         f"* There were most numerical features and therefore we switched to Regressor instead of Classifier and converted features so all were numerical.\n"
-        f"* Our first evaluation gave a score of 0.81 on the test set and after som hyperparameter optimization we landed on 0.83 R2 Score.\n"
+        f"* Our first evaluation gave a score of **0.81** on the test set and after som hyperparameter optimization we landed on **0.83** R2 Score.\n"
         )
 
     st.write("---")

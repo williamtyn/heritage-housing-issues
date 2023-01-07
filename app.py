@@ -15,7 +15,7 @@ app.add_page("Quick Project Summary", project_summary_body)
 app.add_page("House Prices Correlation Study", correlation_study)
 app.add_page("Predict House Price", ml_prediction_body)
 app.add_page("Hypothesis and Validation", hypothesis_validation_body)
-app.add_page("House Sale Price Predictor", predict_sale_price_body)
+app.add_page("ML Predictor Model", predict_sale_price_body)
 
 
 app.run()
