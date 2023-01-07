@@ -7,8 +7,9 @@ def ml_prediction_body():
 
     st.write("### Predict House Sale Price")
 
-    st.info(
-        f"* The client is interested the know the predictive sale price for her four inherited houses. "
+    st.success(
+        f"**Business Requirement 2**\n"
+        f"* The client is interested in knowing the predictive sale price for her four inherited houses. "
         f"The client also wants to have the possibility to calculate any other house sale price in Ames, Iowa.  "
         f"Based on that, by selecting features the predictive sale price will be displayed "
     )
@@ -23,9 +24,9 @@ def ml_prediction_body():
                       .to_list()
                       )
     
-    st.subheader('Want to predict a house sale price?')
+    st.subheader('Select Features to Predict Sale Price')
     st.write(
-        f"Predict House Sale Price based on theese features. "
+        f"Predict the House Sale Price based on these features. "
         )
 
     feat_meaning = [("Variable", "Meaning", "Comment"),
@@ -65,9 +66,19 @@ def ml_prediction_body():
     st.info(
         f"We have done a prediction for the four inherited houses. "
         )
-    
+
     # load inherited houses data
     inherited_data = load_inherited_houses_data()
+
+    # inspect inherited houses data
+    if st.checkbox("Inspect Inherited House Data"):
+        st.write(
+            f"* The dataset has {inherited_data.shape[0]} rows and {inherited_data.shape[1]} columns, "
+            f"below you can see the all {inherited_data.shape[0]} rows.")
+
+        st.write(inherited_data.head(10))
+
+        st.write("---")
 
     house_1 = predict_sale_price(
             inherited_data.iloc[[0]], house_features, pipeline_model
@@ -84,16 +95,16 @@ def ml_prediction_body():
     
     
     st.write(
-        f"Predicted House 1 Sale Price: **$ {house_1}** "
+        f"Predicted House 1 Estimated Sale Price: **$ {house_1}** "
         )
     st.write(
-        f"Predicted House 2 Sale Price: **$ {house_2}** "
+        f"Predicted House 2 Estimated  Sale Price: **$ {house_2}** "
         )
     st.write(
-        f"Predicted House 3 Sale Price: **$ {house_3}** "
+        f"Predicted House 3 Estimated  Sale Price: **$ {house_3}** "
         )
     st.write(
-        f"Predicted House 4 Sale Price: **$ {house_4}** "
+        f"Predicted House 4 Estimated  Sale Price: **$ {house_4}** "
         )
     
 
