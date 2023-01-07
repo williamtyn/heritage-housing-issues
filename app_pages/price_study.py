@@ -13,13 +13,15 @@ def correlation_study():
     """
 
     df = load_houses_data()
+    df_scatter = df.copy()
 
     df_corr_pearson, df_corr_spearman, pps_matrix = CalculateCorrAndPPS(df)
 
     vars_to_study = ['OverallQual', 'GrLivArea', 'GarageArea', 'TotalBsmtSF', '1stFlrSF', 'YearBuilt']
 
     st.write("### House Prices Correlation Study")
-    st.info(
+    st.success(
+        f"**Business Requirement 1**\n"
         f"* The client is interested in discovering how the house attributes correlate with the sale price. \n"
         f"Therefore, the client expects data visualizations of the correlated variables against the sale price to show that."
         )
@@ -37,7 +39,7 @@ def correlation_study():
     # Correlation Study Summary
     st.write(
         f"* A correlation study was conducted in the notebook to better understand how "
-        f"the variables are correlated to Sales Prices. \n"
+        f"the variables are correlated to Sale Price. \n"
         f"The most correlated variable are: \n"
         f"**{vars_to_study}**"
         )
@@ -59,21 +61,25 @@ def correlation_study():
 
     # Text based on "House Prices Study" notebook - "Conclusions and Next steps" section
     st.info(
+        f"**Correlation Indications**\n\n"
         f"The correlation indications and plots below interpretation converge. "
         f"It is indicated that: \n"
         f"* The house price is higher when the first floor area is bigger.\n"
         f"* The house price is higher when the above ground area is bigger.\n"
-        f"* The house price is higher when the house have garage and depending on the size of the garage.\n"
+        f"* The house price is higher when the house has a garage, depending on the size of the garage.\n"
         f"* The house price is higher the better overall quality there is on the house.\n"
         f"* The house price is higher the younger the house is.\n"
         )
     
     
     # Code copied from "02 - House Prices Study" notebook - "EDA on selected variables" section
-    df_eda = df.filter(vars_to_study + ['SalePrice'])
+    df_eda = df_scatter.filter(vars_to_study + ['SalePrice'])
 
-    st.subheader('Select features to see correlation with Sale Price:')
-
+    st.subheader('Select features to see a correlation with Sale Price:')
+    
+    st.write(
+        f"Uncheck other boxes on this page to see the plot of the correlated feature with Sale Price."
+        )
     # Checkbox for scatterplot on selected feature
     if st.checkbox("OverallQual"):
         corr_overallqual(df_eda)
