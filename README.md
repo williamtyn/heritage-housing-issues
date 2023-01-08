@@ -122,7 +122,8 @@ From searching the Internet, Lydia found a public dataset with house prices for 
 |SalePrice|Sale Price|34900 - 755000|
 
 **Project Terms & Jargon**
-Fill this with information about ordinary terms in this project
+* Sale Price is the Price the house have been sold for.
+* Estimated Sale Price is the Price the model estimates the house to be sold for.
 
 
 <h3 id="hypothesis">Hypothesis and how to validate?</h3>
@@ -372,6 +373,7 @@ On this page the client can both predict the price of her inherited houses, but 
 * Answers Business Requirement 2
 * Widgets to predict a house sale price based on the selected features.
 * Display estimated sale price on the inherite houses of the client.
+
 <h3 id="dashboard-4">Page 4: Project Hypothesis and Validation</h3>
 This page answers the hypothesis we had before we started the project.
 
@@ -392,7 +394,9 @@ This page contains information about the ml pipeline.
 
 <h2 id="bugs">Bugs</h2>
 
-**When assessing feature importances** 'ExtraTreesRegressor' object has no attribute 'transform'. None could not be passed
+**When assessing feature importances** 'ExtraTreesRegressor' object has no attribute 'transform'. None could not be passed.
+**Passing dataframe to predict sale price function**
+**Show scatterplots for features are not showing when corr method checkbox is active**
 
 <h2 id="sources">Sources</h2>
 
