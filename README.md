@@ -4,6 +4,8 @@
 
 In this application you can calculate and predict the estimated sales price for your house in Ames, Iowa based on historical data from houses sold in the same area.
 
+![Application Mockup](./static/media/mockup.png)
+
 ## Live Site
 [Go to application]()
 
