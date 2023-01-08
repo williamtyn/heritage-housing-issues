@@ -451,7 +451,7 @@ This page contains information about the ml pipeline.
 
 * **Passing dataframe to predict sale price function** - I struggled a lot to load and predict the sale price for the inherited houses. I received an error message that the "load_inherited_houses_data()" function was not a pandas DataFrame and could not be used in the function, but it was saved in pandas. After a lot of reading, I tried to use the iloc attribute to access the index, and that solved the problem. So the problem was not the data itself, but rather how I tried to access it.
 
-* **Show scatterplots for features are not showing when corr method checkbox is active** - In the dashboard study page, the scatterplots for correlated fetaures with SalePrice showing the Pearson, Spearman and PPS matrix if theese checkboxes is active. If they are not active, the scatterplots are shown as expected. Therefor i added the helptext to uncheck them to show the scatterplot.
+* **Show scatterplots for features are not showing when corr method checkbox is active** - In the dashboard study page, the scatterplots for correlated fetaures with SalePrice showing the Pearson, Spearman and PPS matrix if theese checkboxes is active. If they are not active, the scatterplots are shown as expected. Therefor i added the helptext to uncheck them to show the scatterplot. UPDATE: New bug arrised when deploying the dashboard. I solved it by changing the select methods from checkboxes to selectbox and by that could remove the bugged out code.
 
 <h2 id="sources">Sources</h2>
 
