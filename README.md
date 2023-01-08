@@ -202,8 +202,7 @@ Project Epics can be found [here](https://github.com/users/williamtyn/projects/4
 * Our ideal outcome is to provide Lydia with reliable insights so she feel comfortable making good descisions for her houses and possibly future houses.
 * The model success metrics are:
 ** At least 0.7 for R2 score, on train and test set.
-* The ML model is considered a failure if:
-** the price of sales is more than 10% different from what the model has predicted. Say, the model predict Price at 100 000$, and after bidding the proposed price from buyer is 85 000$.
+* The ML model is considered a failure if the model is wrong by more than 30% after 12 months, the prediction need to be consistent over a long period of time.
 * The output is defined as a numerical value for price in dollars. The prediction is made on the fly (not in batches).
 
 <h2 id="data-understanding">Data Understanding</h2>
@@ -239,9 +238,11 @@ Project Epics can be found [here](https://github.com/users/williamtyn/projects/4
 |SalePrice|Sale Price||
 
 **Target**
+
 Target is good with 100% of its data filled.
 
 **Type of features**
+
 Totally there is 24 features:
 * 4 categorical
 * 20 numerical 
@@ -348,7 +349,21 @@ We used hyperparameters to find the best suitable algorithm. Before this step we
 After that we checked different parameters and got a result for both the best model and parameters which we could add to the pipeline.
 
 
+<h2 id="evaluation">Evaluation</h2>
+In our first attempt with this model we reached a R2 Score of **0.80**. After hyperparameter optimization we reched the R2 score of **0.93** on train set and **0.83** on test set.
 
+* Train Set
+R2 Score: 0.933
+Mean Absolute Error: 14264.592
+Mean Squared Error: 412323737.772
+Root Mean Squared Error: 20305.756
+
+
+* Test Set
+R2 Score: 0.833
+Mean Absolute Error: 21054.416
+Mean Squared Error: 1151626233.352
+Root Mean Squared Error: 33935.619
 
 
 <h2 id="dashboard-design">Dashboard Design</h2>
