@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import ppscore as pps
+import plotly.express as px
 
 
 def correlation_study():
@@ -13,7 +14,6 @@ def correlation_study():
     """
 
     df = load_houses_data()
-    df_scatter = df.copy()
 
     df_corr_pearson, df_corr_spearman, pps_matrix = CalculateCorrAndPPS(df)
 
@@ -46,6 +46,8 @@ def correlation_study():
 
     st.subheader('Select method to see correlated features:')
 
+    df_corr_pearson, df_corr_spearman, pps_matrix = CalculateCorrAndPPS(df)
+
     # Checkbox for displaying correlated features
     if st.checkbox("Pearson Correlation"):
         heatmap_corr(df=df_corr_pearson, threshold=0.5,
@@ -72,83 +74,15 @@ def correlation_study():
         )
     
     
-    # Code copied from "02 - House Prices Study" notebook - "EDA on selected variables" section
-    df_eda = df_scatter.filter(vars_to_study + ['SalePrice'])
+    # scatterplot for displaying correlation between selected feature and Sale Price
+    df_eda = df.filter(vars_to_study + ['SalePrice'])
 
     st.subheader('Select features to see a correlation with Sale Price:')
-    
-    st.write(
-        f"Uncheck other boxes on this page to see the plot of the correlated feature with Sale Price."
-        )
-    # Checkbox for scatterplot on selected feature
-    if st.checkbox("OverallQual"):
-        corr_overallqual(df_eda)
 
-    if st.checkbox("1stFlrSF"):
-        corr_1stflrsf(df_eda)
+    feature_x = st.selectbox(label='All features with area is measured in square feet (sq ft)', options=vars_to_study)
 
-    if st.checkbox("GrLivArea"):
-        corr_grlivarea(df_eda)
-
-    if st.checkbox("GarageArea"):
-        corr_garagearea(df_eda)
-        
-    if st.checkbox("TotalBsmtSF"):
-        corr_totalbsmtsf(df_eda)
-
-    if st.checkbox("YearBuilt"):
-        corr_yearbuilt(df_eda)
-        
-    df_corr_pearson, df_corr_spearman, pps_matrix = CalculateCorrAndPPS(df)
-
-# functions to plot features correlation with Sale Price
-def corr_overallqual(df_eda):
-    corr = df_eda["SalePrice"].corr(df_eda["OverallQual"])
-
-    plt.scatter(df_eda["OverallQual"], df_eda["SalePrice"])
-    plt.xlabel("OverallQual")
-    plt.ylabel("Sale Price ($)")
-    st.pyplot(plt.gcf())
-
-def corr_1stflrsf(df_eda):
-    corr = df_eda["SalePrice"].corr(df_eda["1stFlrSF"])
-
-    plt.scatter(df_eda["1stFlrSF"], df_eda["SalePrice"])
-    plt.xlabel("1stFlrSF (sq ft)")
-    plt.ylabel("Sale Price ($)")
-    st.pyplot(plt.gcf())
-
-def corr_grlivarea(df_eda):
-    corr = df_eda["SalePrice"].corr(df_eda["GrLivArea"])
-
-    plt.scatter(df_eda["GrLivArea"], df_eda["SalePrice"])
-    plt.xlabel("GrLivArea (sq ft)")
-    plt.ylabel("Sale Price ($)")
-    st.pyplot(plt.gcf())
-
-def corr_garagearea(df_eda):
-    corr = df_eda["SalePrice"].corr(df_eda["GarageArea"])
-
-    plt.scatter(df_eda["GarageArea"], df_eda["SalePrice"])
-    plt.xlabel("GarageArea (sq ft)")
-    plt.ylabel("Sale Price ($)")
-    st.pyplot(plt.gcf())
-
-def corr_totalbsmtsf(df_eda):
-    corr = df_eda["SalePrice"].corr(df_eda["TotalBsmtSF"])
-
-    plt.scatter(df_eda["TotalBsmtSF"], df_eda["SalePrice"])
-    plt.xlabel("TotalBsmtSF (sq ft)")
-    plt.ylabel("Sale Price ($)")
-    st.pyplot(plt.gcf())
-
-def corr_yearbuilt(df_eda):
-    corr = df_eda["SalePrice"].corr(df_eda["YearBuilt"])
-
-    plt.scatter(df_eda["YearBuilt"], df_eda["SalePrice"])
-    plt.xlabel("YearBuilt")
-    plt.ylabel("Sale Price ($)")
-    st.pyplot(plt.gcf())
+    fig = px.scatter(df, x=feature_x, y=df_eda['SalePrice']).update_layout(yaxis_title="Sale Price $")
+    st.plotly_chart(fig)
 
 
 # function for correlated heatmap and pps
