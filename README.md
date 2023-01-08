@@ -20,6 +20,7 @@ In this application you can calculate and predict the estimated sales price for 
 <li><a href="#business-understanding">Business Understanding</a></li>
 <ul>
 <li><a href="#storytelling">Storytelling</a></li>
+<li><a href="#project-epics">Project Epics</a></li>
 <li><a href="#dataset">Dataset</a></li>
 <li><a href="#hypothesis">Hypothesis and validation</a></li>
 
@@ -51,6 +52,7 @@ In this application you can calculate and predict the estimated sales price for 
 </ul>
 <li><a href="#libraries">Libraries</a></li>
 <li><a href="#technologies">Technologies</a></li>
+<li><a href="#bugs">Bugs</a></li>
 <li><a href="#sources">Sources</a></li>
 <li><a href="#acknowledgements">Acknowledgements</a></li>
 
@@ -90,6 +92,10 @@ Lydia needs help if she is to maximize the sales price for the inherited propert
 2. She is also interested in predicting the sale price from any house in Ames, Iowa in case of future property ownership in that area.
 
 From searching the Internet, Lydia found a public dataset with house prices for Ames, Iowa, and have provided us with that.
+
+
+<h3 id="project-epics">Project Epics</h3>
+The project worksflow is based on Epics and can be found [here](https://github.com/users/williamtyn/projects/4)
 
 
 <h3 id="dataset">Dataset</h3>
