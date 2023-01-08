@@ -376,6 +376,15 @@ Root Mean Squared Error: 33935.619
 
 <h2 id="deployment">Deployment</h2>
 
+1. Login to Heroku.com and create a new app.
+2. Connect your app to the project repository.
+3. Change the runtime python version to **python-3.8.12**.
+4. Login to your Heroku account via the CLI.
+5. Change the Heroku stack to **heroku-20**.
+6. Push your changes to github.
+7. In your Herokus dashboard, click **Deploy Branch**.
+8. **Your app was successfully deployed.**
+
 <h2 id="dashboard-design">Dashboard Design</h2>
 <h3 id="dashboard-1">Page 1: Quick Project Summary</h3>
 A high-level summary of the project, including:
