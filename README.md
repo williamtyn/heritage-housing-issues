@@ -7,7 +7,7 @@ In this application you can calculate and predict the estimated sales price for 
 ![Application Mockup](./static/media/mockup.png)
 
 ## Live Site
-[Go to application]()
+[Go to application](https://predict-house-price.herokuapp.com/)
 
 ## Repository
 [View repository](https://github.com/williamtyn/heritage-housing-issues)
