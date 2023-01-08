@@ -50,8 +50,9 @@ In this application you can calculate and predict the estimated sales price for 
 <li><a href="#dashboard-5">Page 5: ML Model Performance</a></li>
 </ul>
 <li><a href="#libraries">Libraries</a></li>
+<li><a href="#technologies">Technologies</a></li>
 <li><a href="#sources">Sources</a></li>
-
+<li><a href="#acknowledgements">Acknowledgements</a></li>
 
 ---
 
@@ -367,6 +368,7 @@ Mean Absolute Error: 21054.416
 Mean Squared Error: 1151626233.352
 Root Mean Squared Error: 33935.619
 
+<h2 id="deployment">Deployment</h2>
 
 <h2 id="dashboard-design">Dashboard Design</h2>
 <h3 id="dashboard-1">Page 1: Quick Project Summary</h3>
@@ -409,29 +411,50 @@ This page contains information about the ml pipeline.
 
 <h2 id="libraries">Libraries</h2>
 
-[Numpy](https://numpy.org/doc/stable/) is used to process arrays to store values.
-[Pandas](https://pandas.pydata.org/docs/) is used to analyze data and explore data by vizalisation.
-[Matplotlib](https://matplotlib.org/) is used for creating our static plots.
-[Seaborn](https://seaborn.pydata.org/) is a library based on matplotlib and is used for statistical graphics for heatmaps in this project.
-[pandas_profiling](https://pandas-profiling.ydata.ai/docs/master/index.html) is used to import ProfileReport to better understand features by vizualisation.
-[Ppsscore](https://pypi.org/project/ppscore/) is used for identifying linear or non-linear relationships between features in the dataset.
-[Streamlit](https://docs.streamlit.io/) is the framework we used to develop the client dashboard.
-[Feature-engine](https://feature-engine.readthedocs.io/en/latest/) is used to engineer features to use in the model.
-[Imbalanced-learn](https://pypi.org/project/imbalanced-learn/) is used for imbalanced numerical data.
-[Scikit-learn](https://scikit-learn.org/stable/whats_new/v0.24.html) is used to create model pipeline and apply algoritms.
+* [Numpy](https://numpy.org/doc/stable/) is used to process arrays to store values.
+* [Pandas](https://pandas.pydata.org/docs/) is used to analyze data and explore data by vizalisation.
+* [Matplotlib](https://matplotlib.org/) is used for creating our static plots.
+* [Seaborn](https://seaborn.pydata.org/) is a library based on matplotlib and is used for statistical graphics for heatmaps in this project.
+* [pandas_profiling](https://pandas-profiling.ydata.ai/docs/master/index.html) is used to import ProfileReport to better understand features by vizualisation.
+* [Ppsscore](https://pypi.org/project/ppscore/) is used for identifying linear or non-linear relationships between features in the dataset.
+* [Streamlit](https://docs.streamlit.io/) is the framework we used to develop the client dashboard.
+* [Feature-engine](https://feature-engine.readthedocs.io/en/latest/) is used to engineer features to use in the model.
+* [Imbalanced-learn](https://pypi.org/project/imbalanced-learn/) is used for imbalanced numerical data.
+* [Scikit-learn](https://scikit-learn.org/stable/whats_new/v0.24.html) is used to create model pipeline and apply algoritms.
 
+<h2 id="technologies">Technologies</h2>
+
+* [Python](https://www.python.org/)
+* [Streamlit](https://docs.streamlit.io/)
+* [Github](https://github.com/)
+* [Gitpod](https://www.gitpod.io/)
+* [Heroku](https://www.heroku.com/)
 
 <h2 id="bugs">Bugs</h2>
 
-**When assessing feature importances** 'ExtraTreesRegressor' object has no attribute 'transform'. None could not be passed.
-**Passing dataframe to predict sale price function**
-**Show scatterplots for features are not showing when corr method checkbox is active**
+* **When assessing feature importances** - I got stuck when trying to assess the importance of features. I first received the error message that "None could not be passed" through ExtraTreesRegressor. Therefor i changed the transformation from None to Unf for feature **BsmtFinType1** and **GarageFinish**. When running the data cleaning pipeline, I noticed no difference in the score, which was still **0.80**, and decided to keep this transformation. I still have problem to assess feature importances and after some consultantion with Niel at CI, the problem was that i have used the wrong value for number of steps in the cleaning pipeline, after changing this i got the result.
+
+* **Passing dataframe to predict sale price function** - I struggled a lot to load and predict the sale price for the inherited houses. I received an error message that the "load_inherited_houses_data()" function was not a pandas DataFrame and could not be used in the function, but it was saved in pandas. After a lot of reading, I tried to use the iloc attribute to access the index, and that solved the problem. So the problem was not the data itself, but rather how I tried to access it.
+
+* **Show scatterplots for features are not showing when corr method checkbox is active** - In the dashboard study page, the scatterplots for correlated fetaures with SalePrice showing the Pearson, Spearman and PPS matrix if theese checkboxes is active. If they are not active, the scatterplots are shown as expected. Therefor i added the helptext to uncheck them to show the scatterplot.
 
 <h2 id="sources">Sources</h2>
 
-[Text about CRISP-DM](https://www.datascience-pm.com/crisp-dm-2/)
+* [Text about CRISP-DM](https://www.datascience-pm.com/crisp-dm-2/)
+* The template for this project is provided by [Code Institute](https://codeinstitute.net/se/).
+* A big part of the project workflow and functions was used from the walktrough project "Churnometer" from [Code Institute](https://codeinstitute.net/se/)
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+I want to thank **Niel McEwen** for his support on Slack when i got stuck.
+
+I want to thank **Vanessa Anna-Maria Andersson** for sharing her project and gave me some inspiration for the workflow.
+
+
 
 ---
+
+
 
 This application was completed as a Portfolio Project 5 for the Fullstack Diploma at [Code Institute](https://codeinstitute.net/se/). 
 
